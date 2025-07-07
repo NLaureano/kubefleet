@@ -45,7 +45,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
 	fleetv1beta1 "github.com/kubefleet-dev/kubefleet/apis/placement/v1beta1"
-	"github.com/kubefleet-dev/kubefleet/pkg/controllers/work"
 	"github.com/kubefleet-dev/kubefleet/pkg/utils/condition"
 	"github.com/kubefleet-dev/kubefleet/pkg/utils/controller"
 	"github.com/kubefleet-dev/kubefleet/pkg/utils/defaulter"
@@ -255,7 +254,7 @@ var (
 	// before the hub agent.
 	//
 	// TO-DO (chenyu1): switch off the old reason after proper rollout.
-	WorkNotAllManifestsTrackableReason    = work.WorkNotTrackableReason
+	WorkNotAllManifestsTrackableReason    = "NotTrackable"
 	WorkAllManifestsAppliedReason         = "AllManifestsApplied"
 	WorkAllManifestsAvailableReason       = "AllManifestsAvailable"
 	WorkAllManifestsDiffReportedReason    = "AllManifestsDiffReported"
